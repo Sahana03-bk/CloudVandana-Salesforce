@@ -79,9 +79,11 @@ CloudVandana-Salesforce/
 └── static/
     ├── app.js
     └── style.css
+```
 
 ## Application Architecture
-User
+
+```User
   │
   ▼
 Web Interface
@@ -101,7 +103,7 @@ Salesforce REST API
   ▼
 Salesforce Objects
 (Account / Contact / Lead / Opportunity / Case)
-
+```
 ## Salesforce Authentication
 Application
     │
