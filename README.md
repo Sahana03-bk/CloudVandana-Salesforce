@@ -170,35 +170,29 @@ Example:
 When the user reaches the bottom of the table, the next batch of records is loaded.
 ### API Endpoints
 ## Salesforce Login
-GET /auth/login
+```GET /auth/login```
 
 Starts the Salesforce OAuth authentication process.
 
 ## OAuth Callback
-GET /auth/callback
+```GET /auth/callback```
 
 Handles the Salesforce OAuth callback and stores the access token.
 
 ## Get Records
-GET /records/{object_name}
-
+```GET /records/{object_name}```
 Example:
-
-GET /records/Account?offset=0
+```GET /records/Account?offset=0```
 ## Create Record
-POST /records/{object_name}
+```POST /records/{object_name}```
 ## Update Record
-PUT /records/{object_name}/{record_id}
+```PUT /records/{object_name}/{record_id}```
 ## Delete Record
-DELETE /records/{object_name}/{record_id}
+```DELETE /records/{object_name}/{record_id}```
 ## API Documentation
-
 FastAPI automatically provides Swagger documentation at:
-
-/docs
-
+```/docs```
 When running locally:
-
 http://127.0.0.1:8000/docs
 
 ## Environment Variables
@@ -206,31 +200,32 @@ http://127.0.0.1:8000/docs
 Sensitive Salesforce credentials should be stored in a .env file and should never be committed to GitHub.
 
 Example:
-
+```
 SALESFORCE_CLIENT_ID=your_client_id
 SALESFORCE_CLIENT_SECRET=your_client_secret
 SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
-
+```
 ### Installation
 ## 1. Clone the repository
-git clone https://github.com/Sahana03-bk/CloudVandana-Salesforce.git
+```git clone https://github.com/Sahana03-bk/CloudVandana-Salesforce.git```
 ## 2. Navigate to the project
-cd CloudVandana-Salesforce
+```cd CloudVandana-Salesforce```
 ## 3. Create a virtual environment
 Windows:
-python -m venv venv
+```python -m venv venv```
 ## 4. Activate the virtual environment
 Windows PowerShell:
-venv\Scripts\Activate.ps1
+```venv\Scripts\Activate.ps1```
 ## 5. Install dependencies
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 ## 6. Configure environment variables
 Create a .env file:
+```
 SALESFORCE_CLIENT_ID=your_client_id
 SALESFORCE_CLIENT_SECRET=your_client_secret
-SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
+SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback```
 ## 7. Start the application
-uvicorn main:app --reload
+```uvicorn main:app --reload```
 The application will run at:
 http://127.0.0.1:8000
 
