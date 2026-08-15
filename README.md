@@ -126,3 +126,45 @@ Access Token
     ▼
 Salesforce REST API
 ```
+### CRUD Operations
+## Create
+
+The application allows users to create records for:
+
+Account
+Contact
+Lead
+Opportunity
+Case
+Read
+
+Records are retrieved from Salesforce using SOQL queries through the Salesforce REST API.
+
+## Update
+
+Existing Salesforce records can be edited and updated through the application.
+
+## Delete
+
+Records can be deleted through the application.
+
+Salesforce may prevent deletion of records that have dependent or related records. In such cases, the application displays the Salesforce error instead of treating it as an application crash.
+
+For example, an Account or Contact associated with Cases may not be deleted by Salesforce.
+
+## Pagination
+
+The application uses pagination to avoid loading all Salesforce records at once.
+
+Records are retrieved in batches using:
+
+LIMIT 20
+OFFSET <offset>
+
+The application also retrieves the total number of records using a count query.
+
+Example:
+
+20 of 21 records
+
+When the user reaches the bottom of the table, the next batch of records is loaded.
