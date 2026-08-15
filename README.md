@@ -230,4 +230,50 @@ SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
 The application will run at:
 http://127.0.0.1:8000
 
+## Testing
+
+The API can be tested using FastAPI Swagger UI:
+
+```http://127.0.0.1:8000/docs```
+
+The following operations were tested:
+
+Salesforce authentication
+Account creation
+Contact creation
+Lead creation
+Opportunity creation
+Case creation
+Record retrieval
+Record update
+Record deletion
+Pagination
+Salesforce deletion restrictions
+Error handling
+
+## Error Handling
+
+The application handles:
+
+Missing Salesforce authentication
+Invalid Salesforce object names
+Invalid pagination offsets
+Salesforce API errors
+Salesforce record deletion restrictions
+Authentication failures
+
+Salesforce-specific errors are returned to the frontend so that users receive meaningful notifications.
+
+## Security
+
+Sensitive credentials are not stored in source code.
+
+The following files and directories are excluded from Git:
+```
+.env
+venv/
+__pycache__/
+*.pyc
+```
+Salesforce access tokens are handled by the application session and are not intended to be committed to the repository.
 
