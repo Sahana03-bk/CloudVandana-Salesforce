@@ -105,7 +105,8 @@ Salesforce Objects
 (Account / Contact / Lead / Opportunity / Case)
 ```
 ## Salesforce Authentication
-Application
+
+```Application
     │
     ▼
 Salesforce Login
@@ -124,3 +125,4 @@ Access Token
     │
     ▼
 Salesforce REST API
+```
