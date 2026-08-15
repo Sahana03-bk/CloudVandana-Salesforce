@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CloudVandana Salesforce Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+
+        <div>
+            <h1>Salesforce Manager</h1>
+            <p>CloudVandana Associate Software Engineer</p>
+        </div>
+
+        <a
+            href="/auth/login"
+            id="loginButton"
+            class="login-button"
+        >
+            Login with Salesforce
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section class="toolbar">
+
+            <div class="object-selector">
+
+                <label for="objectSelect">
+                    Select Salesforce Object
+                </label>
+
+                <select id="objectSelect">
+
+                    <option value="Account">
+                        Account
+                    </option>
+
+                    <option value="Opportunity">
+                        Opportunity
+                    </option>
+
+                    <option value="Lead">
+                        Lead
+                    </option>
+
+                    <option value="Contact">
+                        Contact
+                    </option>
+
+                    <option value="Case">
+                        Case
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                id="createButton"
+                class="primary-button"
+            >
+                + Create Record
+            </button>
+
+        </section>
+
+
+        <section class="status-section">
+
+            <span id="recordCount">
+                0 records
+            </span>
+
+            <span id="loading">
+                Loading...
+            </span>
+
+        </section>
+
+
+        <section
+            id="tableContainer"
+            class="table-container"
+        >
+
+            <table>
+
+                <thead id="tableHead"></thead>
+
+                <tbody id="tableBody"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <div
+            id="scrollLoader"
+            class="scroll-loader"
+        >
+            Scroll down to load more
+        </div>
+
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+    </main>
+
+</div>
+
+
+<!-- Modal -->
+
+<div
+    id="modal"
+    class="modal hidden"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2 id="modalTitle">
+                Create Record
+            </h2>
+
+            <button
+                id="closeModal"
+                class="close-button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="recordForm">
+
+            <div id="formFields"></div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="/static/app.js"></script>
+
+</body>
+
+</html>
