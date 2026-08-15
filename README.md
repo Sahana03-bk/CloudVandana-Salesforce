@@ -223,10 +223,10 @@ Create a .env file:
 ```
 SALESFORCE_CLIENT_ID=your_client_id
 SALESFORCE_CLIENT_SECRET=your_client_secret
-SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback```
-
+SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
+```
 ## 7. Start the application
-```uvicorn main:app --reload``
+```uvicorn main:app --reload```
 The application will run at:
 http://127.0.0.1:8000
 
