@@ -126,7 +126,7 @@ Access Token
     ▼
 Salesforce REST API
 ```
-### CRUD Operations
+# CRUD Operations
 ## Create
 
 The application allows users to create records for:
@@ -168,3 +168,26 @@ Example:
 20 of 21 records
 
 When the user reaches the bottom of the table, the next batch of records is loaded.
+API Endpoints
+Salesforce Login
+GET /auth/login
+
+Starts the Salesforce OAuth authentication process.
+
+OAuth Callback
+GET /auth/callback
+
+Handles the Salesforce OAuth callback and stores the access token.
+
+Get Records
+GET /records/{object_name}
+
+Example:
+
+GET /records/Account?offset=0
+Create Record
+POST /records/{object_name}
+Update Record
+PUT /records/{object_name}/{record_id}
+Delete Record
+DELETE /records/{object_name}/{record_id}
