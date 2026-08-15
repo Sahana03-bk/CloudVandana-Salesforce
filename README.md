@@ -168,26 +168,69 @@ Example:
 20 of 21 records
 
 When the user reaches the bottom of the table, the next batch of records is loaded.
-API Endpoints
-Salesforce Login
+### API Endpoints
+## Salesforce Login
 GET /auth/login
 
 Starts the Salesforce OAuth authentication process.
 
-OAuth Callback
+## OAuth Callback
 GET /auth/callback
 
 Handles the Salesforce OAuth callback and stores the access token.
 
-Get Records
+## Get Records
 GET /records/{object_name}
 
 Example:
 
 GET /records/Account?offset=0
-Create Record
+## Create Record
 POST /records/{object_name}
-Update Record
+## Update Record
 PUT /records/{object_name}/{record_id}
-Delete Record
+## Delete Record
 DELETE /records/{object_name}/{record_id}
+## API Documentation
+
+FastAPI automatically provides Swagger documentation at:
+
+/docs
+
+When running locally:
+
+http://127.0.0.1:8000/docs
+
+## Environment Variables
+
+Sensitive Salesforce credentials should be stored in a .env file and should never be committed to GitHub.
+
+Example:
+
+SALESFORCE_CLIENT_ID=your_client_id
+SALESFORCE_CLIENT_SECRET=your_client_secret
+SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
+
+### Installation
+## 1. Clone the repository
+git clone https://github.com/Sahana03-bk/CloudVandana-Salesforce.git
+## 2. Navigate to the project
+cd CloudVandana-Salesforce
+## 3. Create a virtual environment
+Windows:
+python -m venv venv
+## 4. Activate the virtual environment
+Windows PowerShell:
+venv\Scripts\Activate.ps1
+## 5. Install dependencies
+pip install -r requirements.txt
+## 6. Configure environment variables
+Create a .env file:
+SALESFORCE_CLIENT_ID=your_client_id
+SALESFORCE_CLIENT_SECRET=your_client_secret
+SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
+## 7. Start the application
+uvicorn main:app --reload
+The application will run at:
+http://127.0.0.1:8000
+
