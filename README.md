@@ -215,10 +215,10 @@ SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
 SALESFORCE_LOGIN_URL=https://login.salesforce.com
 ```
 For the deployed application, the callback URL is configured using the Railway environment variables.
-```https://cloudvandana-salesforce-production.up.railway.app/auth/callback```
+https://cloudvandana-salesforce-production.up.railway.app/auth/callback
 ### Installation
 ## 1. Clone the repository
-```git clone https://github.com/Sahana03-bk/CloudVandana-Salesforce.git```
+git clone https://github.com/Sahana03-bk/CloudVandana-Salesforce.git
 ## 2. Navigate to the project
 ```cd CloudVandana-Salesforce```
 ## 3. Create a virtual environment
@@ -246,7 +246,7 @@ http://127.0.0.1:8000
 
 The API can be tested using FastAPI Swagger UI:
 
-```http://127.0.0.1:8000/docs```
+http://127.0.0.1:8000/docs
 
 The following operations were tested:
 
@@ -293,7 +293,7 @@ The application is deployed using Railway.
 
 Live application:
 
-```https://cloudvandana-salesforce-production.up.railway.app/```
+https://cloudvandana-salesforce-production.up.railway.app/
 
 The deployed application uses Salesforce OAuth authentication and communicates with Salesforce through the Salesforce REST API.
 # Author
