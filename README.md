@@ -1,10 +1,18 @@
-﻿# CloudVandana-Salesforce
-# CloudVandana Salesforce CRUD Application
+﻿# CloudVandana Salesforce CRUD Application
 
-A full-stack web application built using **FastAPI** and **Salesforce REST API** to perform CRUD operations on Salesforce records.
+A full-stack web application built using **FastAPI** and the **Salesforce REST API** to perform CRUD operations on Salesforce records.
 
-The application authenticates users through Salesforce OAuth and provides a simple web interface for managing Salesforce records.
+The application uses **Salesforce OAuth 2.0 authentication** and provides a simple web interface for managing Salesforce records.
 
+## Live Application
+
+**Deployed Application:**
+
+https://cloudvandana-salesforce-production.up.railway.app/
+
+## GitHub Repository
+
+https://github.com/Sahana03-bk/CloudVandana-Salesforce
 ## Features
 
 - Salesforce OAuth 2.0 authentication
@@ -146,11 +154,11 @@ Existing Salesforce records can be edited and updated through the application.
 
 ## Delete
 
-Records can be deleted through the application.
+Existing Salesforce records can be deleted through the application.
 
-Salesforce may prevent deletion of records that have dependent or related records. In such cases, the application displays the Salesforce error instead of treating it as an application crash.
+Salesforce may prevent deletion of records that have dependent or related records. In such cases, the application displays the Salesforce API error instead of treating it as an application failure.
 
-For example, an Account or Contact associated with Cases may not be deleted by Salesforce.
+For example, Salesforce may prevent deletion of an Account or Contact when related Cases or other dependent records exist.
 
 ## Pagination
 
@@ -204,7 +212,10 @@ Example:
 SALESFORCE_CLIENT_ID=your_client_id
 SALESFORCE_CLIENT_SECRET=your_client_secret
 SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
+SALESFORCE_LOGIN_URL=https://login.salesforce.com
 ```
+For the deployed application, the callback URL is configured using the Railway environment variables.
+```https://cloudvandana-salesforce-production.up.railway.app/auth/callback```
 ### Installation
 ## 1. Clone the repository
 ```git clone https://github.com/Sahana03-bk/CloudVandana-Salesforce.git```
@@ -224,6 +235,7 @@ Create a .env file:
 SALESFORCE_CLIENT_ID=your_client_id
 SALESFORCE_CLIENT_SECRET=your_client_secret
 SALESFORCE_REDIRECT_URI=http://127.0.0.1:8000/auth/callback
+SALESFORCE_LOGIN_URL=https://login.salesforce.com
 ```
 ## 7. Start the application
 ```uvicorn main:app --reload```
@@ -276,4 +288,14 @@ __pycache__/
 *.pyc
 ```
 Salesforce access tokens are handled by the application session and are not intended to be committed to the repository.
+# Deployment
+The application is deployed using Railway.
+
+Live application:
+
+```https://cloudvandana-salesforce-production.up.railway.app/```
+
+The deployed application uses Salesforce OAuth authentication and communicates with Salesforce through the Salesforce REST API.
+# Author
+Sahana B K
 
